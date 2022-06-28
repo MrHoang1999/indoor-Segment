@@ -25,13 +25,7 @@ class Position_Attention_Block(nn.Module):
         self.softmax = Softmax(dim=-1)
 
     def forward(self, x):
-        """
-            inputs :
-                x : input feature maps( B X C X H X W)
-            returns :
-                out : attention value + input feature ( B X C X H X W)
-                attention: B X (HxW) X (HxW)
-        """
+     
         m_batchsize, C, height, width = x.size()
         proj_query = self.query_conv(x).view(m_batchsize, -1, width*height).permute(0, 2, 1)
         proj_key = self.key_conv(x).view(m_batchsize, -1, width*height)
