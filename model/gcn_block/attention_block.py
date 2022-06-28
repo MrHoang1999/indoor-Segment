@@ -12,8 +12,8 @@ import numpy as np
 
 
 class Position_Attention_Block(nn.Module):
-    """ Position attention module"""
-    #paper: Dual Attention Network for Scene Segmentation
+  
+   
     def __init__(self, in_dim):
         super(Position_Attention_Block, self).__init__()
         self.chanel_in = in_dim
@@ -41,7 +41,7 @@ class Position_Attention_Block(nn.Module):
 
 
 
-## Channel Attention (CA) Layer
+
 class CALayer(nn.Module):
     def __init__(self, channel, reduction=16):
         super(CALayer, self).__init__()
